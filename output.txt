@@ -1,0 +1,64 @@
+============================================================
+ ADVANCED BANKING CONSOLE APPLICATION - C# 14 / .NET 10
+============================================================
+
+Environment : Production
+
+=== COLLECTIONS + GENERICS ===
+ACC1001  | Ravi       | SavingsAccount   | ₹    150,000.00 | Active=True
+ACC1002  | Suresh     | CurrentAccount   | ₹     50,000.00 | Active=True
+ACC1003  | Anil       | SavingsAccount   | ₹  1,250,000.00 | Active=True
+Dictionary lookup ACC1001 -> Ravi (ACC1001)
+HashSet unique transaction IDs -> 2
+
+=== LINQ REPORT ===
+SavingsAccount    Count=2  Total=₹1,400,000.00 Average=₹700,000.00
+CurrentAccount    Count=1  Total=₹50,000.00 Average=₹50,000.00
+Any premium/high-value account : True
+All accounts premium            : False
+
+=== HIGH VALUE ACCOUNTS ===
+Anil (ACC1003) | Premium=True
+Ravi (ACC1001) | Premium=False
+
+=== PATTERN MATCHING ===
+ACC1001 -> Savings
+ACC1002 -> Current
+ACC1003 -> Premium Savings
+
+=== ASYNC / AWAIT + TASK.WHENALL ===
+ACC1001 -> ₹150,000.00
+ACC1002 -> ₹50,000.00
+ACC1003 -> ₹1,250,000.00
+
+=== EXCEPTION HANDLING ===
+EVENT -> Transfer | TXN-XXXXXXXX | ACC1001 | ₹25,000.00
+Transfer succeeded.
+Expected banking error: Account 'UNKNOWN' was not found.
+
+=== CANCELLATION TOKEN ===
+Requesting cooperative cancellation...
+Batch processing cancelled safely.
+
+=== CONCURRENCY / PARALLELISM ===
+Parallel worker -> ACC1001: Standard
+Parallel worker -> ACC1002: Standard
+Parallel worker -> ACC1003: Premium
+
+=== RECORDS + WITH EXPRESSION ===
+Original : Customer { Id = 99, Name = Original Customer, Email = old@bank.test }
+Updated  : Customer { Id = 99, Name = Original Customer, Email = new@bank.test }
+
+=== APPLICATION LIFECYCLE ===
+Services registered -> application started.
+Cancellation source registered for graceful shutdown.
+Application stopping requested: False
+
+=== FINAL ACCOUNT STATE ===
+ACC1001  | Ravi       | SavingsAccount   | ₹    125,000.00 | Active=True
+ACC1002  | Suresh     | CurrentAccount   | ₹     75,000.00 | Active=True
+ACC1003  | Anil       | SavingsAccount   | ₹  1,250,000.00 | Active=True
+
+============================================================
+ DEMO COMPLETED SUCCESSFULLY
+============================================================
